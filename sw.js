@@ -1,0 +1,2 @@
+const C="sito-v1";self.addEventListener("install",()=>self.skipWaiting());self.addEventListener("activate",e=>e.waitUntil(clients.claim()));
+self.addEventListener("fetch",e=>{const q=e.request;if(q.method!=="GET"||new URL(q.url).origin!==location.origin)return;e.respondWith(fetch(q).then(x=>{const c=x.clone();caches.open(C).then(k=>k.put(q,c));return x}).catch(()=>caches.match(q).then(m=>m||caches.match("./"))))});
