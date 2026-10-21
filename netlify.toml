@@ -1,0 +1,4 @@
+# Netlify pubblica la radice del repository e compila le funzioni in netlify/functions.
+[build]
+  publish = "."
+  functions = "netlify/functions"
